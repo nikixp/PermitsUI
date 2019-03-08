@@ -24,7 +24,7 @@
 
 <body>
 <div id="wrapper">
-    <div class="container-fluid" style="background: black">
+    <div class="container-fluid" style="background: #343A40">
         <div id="header">
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

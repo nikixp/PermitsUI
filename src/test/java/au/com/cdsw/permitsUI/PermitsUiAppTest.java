@@ -15,35 +15,31 @@ import java.util.Map;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
-public class PermitsUiApplicationTests {
+public class PermitsUiAppTest {
 
-	@Test
-	public void contextLoads() {
+    @Test
+    public void contextLoads() {
 
-		Map<String, String> headers = new HashMap<>();
-		headers.put("accept", "application/json");
-		headers.put("Authorization", "Bearer 5a9ce37b3100004f00ab5154");
-
-		Map<String, Object> fields = new HashMap<>();
-		fields.put("name", "Sam Baeldung");
-		fields.put("id", "PSP123");
+//		Map<String, String> headers = new HashMap<>();
+//		headers.put("accept", "application/json");
+//		headers.put("Authorization", "Basic YWRhbW9AY2Rzdy5jb20uYXU6dGVzdA==");
+//
+//		Map<String, Object> fields = new HashMap<>();
+//		fields.put("username", "adamo@cdsw.com.au");
+//		fields.put("password", "test");
 
 		try {
 			HttpResponse<JsonNode> jsonResponse
-					= Unirest.put("http://www.mocky.io/v2/5a9ce7853100002a00ab515e")
-					.headers(headers).fields(fields)
+					= Unirest.post("http://admin.parki.com.au/api/customer/authenticate")
+					.body("{\"username\":\"adamo@cdsw.com.au\", \"password\":\"test\"}")
 					.asJson();
 
-			assertNotNull(jsonResponse.getBody());
-			assertEquals(202, jsonResponse.getStatus());
 		}
 		catch (UnirestException e){
 			e.printStackTrace();
 		}
 
 
-	}
+    }
 
 }
