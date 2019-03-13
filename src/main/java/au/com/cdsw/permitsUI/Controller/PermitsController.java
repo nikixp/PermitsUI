@@ -22,7 +22,7 @@ public class PermitsController {
         ObjectMapper mapper = new ObjectMapper();
 
         try{
-            List<Permits> permits = mapper.readValue(new URL("http://localhost:8080/api/permits/501"), new TypeReference<List<Permits>>(){});
+            List<Permits> permits = mapper.readValue(new URL("http://localhost:1010/api/permits/501"), new TypeReference<List<Permits>>(){});
 
             model.addAttribute("permits", permits);
         }

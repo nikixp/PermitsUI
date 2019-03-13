@@ -17,19 +17,16 @@ public class Customer {
 
     private List<Vehicle> vehicles;
 
-    private List<String> fundingSource;
-
-    private User user;
+    private User userId;
 
     public Customer(){}
 
-    public Customer(String email, String givenName, String familyName, List<Vehicle> vehicles, List<String> fundingSource, User user) {
+    public Customer(String email, String givenName, String familyName, List<Vehicle> vehicles, User userId) {
         this.email = email;
         this.givenName = givenName;
         this.familyName = familyName;
         this.vehicles = vehicles;
-        this.fundingSource = fundingSource;
-        this.user = user;
+        this.userId = userId;
     }
 
     public Long getId() {
@@ -72,20 +69,12 @@ public class Customer {
         this.vehicles = vehicles;
     }
 
-    public List<String> getFundingSource() {
-        return fundingSource;
-    }
-
-    public void setFundingSource(List<String> fundingSource) {
-        this.fundingSource = fundingSource;
-    }
-
     public User getUser() {
-        return user;
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(User userId) {
+        this.userId = userId;
     }
 
     @Override
@@ -96,8 +85,7 @@ public class Customer {
                 ", givenName='" + givenName + '\'' +
                 ", familyName='" + familyName + '\'' +
                 ", vehicles=" + vehicles +
-                ", fundingSource=" + fundingSource +
-                ", user=" + user +
+                ", userId=" + userId +
                 '}';
     }
 }

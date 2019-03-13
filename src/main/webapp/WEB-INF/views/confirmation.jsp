@@ -9,7 +9,13 @@
     <div class="row justify-content-center ">
         <div class="col-5">
             <h4 class="text-success">Application submitted successfully !!! Please check your email address regularly. <br />Application processing takes up to 10 days.</h4>
+
+            <form:form action="${path}/logout" method="post">
+                <button class="btn btn-link" type="submit"><a style="color:black">Logout</a></button>
+            </form:form>
         </div>
+
+
     </div>
 
 </div>

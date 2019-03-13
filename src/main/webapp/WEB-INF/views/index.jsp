@@ -41,6 +41,8 @@
                     </tbody>
                 </table>
             </div>
+
+            <h5>User vehicle(s) details, "4 vehicles allowed"</h5>
         </div>
     </div>
 </div>
