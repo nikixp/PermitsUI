@@ -27,7 +27,7 @@
                 <div class="form-group row col-lg-6 col-xl-6 col-md-7 col-sm-7 mx-auto" style="margin-top: 20%">
                     <!-- Check for registration error -->
                     <c:if test="${param.error != null}">
-                        <i  class="error">Sorry! You entered invalid username/password.</i>
+                        <i  class="error" style="color: red">Sorry! You entered invalid username/password.</i>
                     </c:if>
                     <!-- Check for logout -->
                     <c:if test="${param.logout != null}">

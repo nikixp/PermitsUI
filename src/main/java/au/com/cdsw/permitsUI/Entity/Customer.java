@@ -8,15 +8,10 @@ import java.util.List;
 public class Customer {
 
     private Long id;
-
     private String email;
-
     private String givenName;
-
     private String familyName;
-
     private List<Vehicle> vehicles;
-
     private User userId;
 
     public Customer(){}

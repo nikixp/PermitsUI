@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta roleName="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Open List | Html template</title>
+    <title>Permits</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../../images/favicon.png" type="image/x-icon" />
