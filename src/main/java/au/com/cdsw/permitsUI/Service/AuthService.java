@@ -26,10 +26,8 @@ public class AuthService {
     public MultiValueMap<String, String> createRequest(String username, String password){
         MultiValueMap<String, String> request = new LinkedMultiValueMap<>();
         request.add("username", username);
-        System.out.println(username);
         request.add("password", password);
-        System.out.println(password);
-        System.out.println("---------------------");
+        System.out.println(username + "--------<--Username.....Password-->---------" + password);
 
         return request;
     }

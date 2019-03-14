@@ -1,20 +1,10 @@
 package au.com.cdsw.permitsUI;
 
-import au.com.cdsw.permitsUI.Entity.Customer;
-import com.jayway.jsonpath.internal.filter.ValueNode;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class PermitsUiAppTest {
@@ -30,21 +20,24 @@ public class PermitsUiAppTest {
 //		fields.put("username", "adamo@cdsw.com.au");
 //		fields.put("password", "test");
 //
-//		try {
+		//server is not able to process the Content-Type of the request,
+		try {
+
+			Unirest.post("http://admin.parki.com.au/api/customer/authenticate")
+					.queryString("username", "adamo@cdsw.com.au")
+					.field("username", "adamo@cdsw.com.au")
+					.asJson();
 //			HttpResponse<JsonNode> jsonResponse
 //					= Unirest.post("http://admin.parki.com.au/api/customer/authenticate")
 //					.body("{\"username\":\"adamo@cdsw.com.au\", \"password\":\"test\"}")
 //					.asJson();
-//
-//		}
-//		catch (UnirestException e){
-//			e.printStackTrace();
-//		}
+//			DataServiceVersion: 2.9;
+		}
+		catch (UnirestException e){
+			e.printStackTrace();
+		}
 
-		ResponseEntity<Customer> responseEntity = new RestTemplate().getForEntity("https://admin.parki.com.au/api/customer/authenticate", Customer.class,"adamo@cdsw.com.au", "test");
 
-		Customer response = responseEntity.getBody();
-		System.out.println(response);
 	}
 
 }
