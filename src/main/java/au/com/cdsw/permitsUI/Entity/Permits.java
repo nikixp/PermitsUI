@@ -15,7 +15,7 @@ public class Permits implements Serializable {
 
     private String daysValid;
 
-    private Long permitAreaFk;
+//    private Long permitAreaFk;
 
     private String vehicleType;
 
@@ -37,9 +37,9 @@ public class Permits implements Serializable {
         return daysValid;
     }
 
-    public Long getPermitAreaFk() {
-        return permitAreaFk;
-    }
+//    public Long getPermitAreaFk() {
+//        return permitAreaFk;
+//    }
 
     public String getVehicleType() {
         return vehicleType;
@@ -52,7 +52,7 @@ public class Permits implements Serializable {
                 ", cost=" + cost +
                 ", name='" + name + '\'' +
                 ", daysValid='" + daysValid + '\'' +
-                ", permitAreaFk=" + permitAreaFk +
+//                ", permitAreaFk=" + permitAreaFk +
                 ", vehicleType='" + vehicleType + '\'' +
                 '}';
     }

@@ -29,13 +29,15 @@ public class AuthenticationService implements AuthenticationProvider {
 
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
-
         Customer customer = authService.authenticate(authService.createRequest(username, password));
+
+        System.out.println("Customer: " + customer);
+
         if(customer != null){
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
             //here I need to store my customer object to use it while the user is logged in
             grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-
+            System.out.println("9999999999((((((((((((((((()))))))))))))))");
             return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities);
         }
         throw new AuthenticationServiceException("Invalid credential");

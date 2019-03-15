@@ -15,7 +15,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Cost</th>
                         <th scope="col">Days Valid</th>
-                        <th scope="col">Permit Area Key</th>
+                        <%--<th scope="col">Permit Area Key</th>--%>
                         <th scope="col">Vehicle Type</th>
                         <th scope="col">Apply</th>
                     </tr>
@@ -33,7 +33,7 @@
                             <td> ${tempPermit.name}</td>
                             <td> ${tempPermit.cost}</td>
                             <td> ${tempPermit.daysValid}</td>
-                            <td> ${tempPermit.permitAreaFk}</td>
+                            <%--<td> ${tempPermit.permitAreaFk}</td>--%>
                             <td> ${tempPermit.vehicleType}</td>
                             <td><a href="${submitLink}" onclick="if(!(confirm('Are you sure you want to apply for the selected permit?'))) return false">Submit Application</a></td>
                         </tr>

@@ -67,8 +67,7 @@ public class SecurityConfig implements WebMvcConfigurer  {//extends WebSecurityC
 //        auth.inMemoryAuthentication()
 //                .withUser(users.username("adam").password("test").roles("ADMIN"));
 //    }
-
-
+//
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception{
 //

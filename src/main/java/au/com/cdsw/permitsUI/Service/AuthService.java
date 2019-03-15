@@ -1,7 +1,6 @@
 package au.com.cdsw.permitsUI.Service;
 
 import au.com.cdsw.permitsUI.Entity.Customer;
-import au.com.cdsw.permitsUI.Entity.User;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
