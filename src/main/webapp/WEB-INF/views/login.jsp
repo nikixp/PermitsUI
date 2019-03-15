@@ -8,9 +8,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta roleName="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Review Container</title>
+    <title>Welcome To Permits</title>
 
     <!--Theme Styles CSS-->
     <link rel="stylesheet" href="../../css/myStyle.css" media="all" />
