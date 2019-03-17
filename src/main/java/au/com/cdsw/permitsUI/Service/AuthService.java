@@ -19,7 +19,7 @@ public class AuthService {
     }
 
     public Customer authenticate(MultiValueMap<String, String> request){
-        return authRestTemplate().postForObject("/api/customer/authenticate", request, Customer.class);
+        return authRestTemplate().postForObject("/user", request, Customer.class);
     }
 
     public MultiValueMap<String, String> createRequest(String username, String password){

@@ -37,7 +37,7 @@ public class AuthenticationService implements AuthenticationProvider {
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
             //here I need to store my customer object to use it while the user is logged in
             grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-            System.out.println("9999999999((((((((((((((((()))))))))))))))");
+            System.out.println("((((((((((((((((()))))))))))))))");
             return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities);
         }
         throw new AuthenticationServiceException("Invalid credential");
