@@ -3,16 +3,11 @@ package au.com.cdsw.permitsUI;
 import au.com.cdsw.permitsUI.Entity.User;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -41,7 +36,6 @@ public class PermitsUiAppTest {
         } catch (URISyntaxException e){
             System.out.println(e);
         }
-
 
     }
 

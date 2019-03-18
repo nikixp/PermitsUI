@@ -19,7 +19,6 @@ public class SecurityConfig  implements WebMvcConfigurer  {//extends WebSecurity
 
     @Autowired
     private CustomAuthenticationSuccessHandler successHandler;
-
     private AuthenticationService authenticationService;
 
     @Autowired
