@@ -53,7 +53,7 @@ public class AuthenticationService implements AuthenticationProvider {
             //here I need to store my customer object to use it while the user is logged in
             grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
             return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities);
-        }
+        } else
         throw new AuthenticationServiceException("Invalid Credential");
     }
 
