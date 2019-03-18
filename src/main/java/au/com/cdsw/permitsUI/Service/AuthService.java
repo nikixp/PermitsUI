@@ -1,6 +1,7 @@
 package au.com.cdsw.permitsUI.Service;
 
 import au.com.cdsw.permitsUI.Entity.Customer;
+import au.com.cdsw.permitsUI.Entity.User;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -15,18 +16,18 @@ public class AuthService {
 
     @Bean
     public RestTemplate authRestTemplate(){
-        return new RestTemplateBuilder().rootUri("https://admin.parki.com.au/api/customer/authenticate").build();
+        return new RestTemplateBuilder().rootUri("http://admin.parki.com.au/api/customer/authenticate").build();
     }
 
-    public Customer authenticate(MultiValueMap<String, String> request){
-        return authRestTemplate().postForObject("/user", request, Customer.class);
+    public User authenticate(MultiValueMap<String, String> request){
+        return authRestTemplate().postForObject("/user", request, User.class);
     }
 
     public MultiValueMap<String, String> createRequest(String username, String password){
         MultiValueMap<String, String> request = new LinkedMultiValueMap<>();
         request.add("username", username);
         request.add("password", password);
-        System.out.println(username + "--------<--Username.....Password-->---------" + password);
+        System.out.println(username + "--------<--Username.....Password-->---------" + password +  " " + request);
 
         return request;
     }

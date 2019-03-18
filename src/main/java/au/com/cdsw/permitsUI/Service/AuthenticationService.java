@@ -1,6 +1,7 @@
 package au.com.cdsw.permitsUI.Service;
 
 import au.com.cdsw.permitsUI.Entity.Customer;
+import au.com.cdsw.permitsUI.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.AuthenticationServiceException;
@@ -29,7 +30,11 @@ public class AuthenticationService implements AuthenticationProvider {
 
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
-        Customer customer = authService.authenticate(authService.createRequest(username, password));
+
+        System.out.println("Credential Class : " + password.getClass());
+
+//        User customer = authService.authenticate(authService.createRequest(username, password));
+        User customer = authService.authenticate(authService.createRequest(username, password));
 
         System.out.println("Customer: " + customer);
 
@@ -40,7 +45,7 @@ public class AuthenticationService implements AuthenticationProvider {
             System.out.println("((((((((((((((((()))))))))))))))");
             return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities);
         }
-        throw new AuthenticationServiceException("Invalid credential");
+        throw new AuthenticationServiceException("Invalid Credential");
     }
 
     @Override
