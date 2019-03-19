@@ -22,12 +22,8 @@ import java.util.List;
 @Service
 public class AuthenticationService implements AuthenticationProvider {
 
-//    private AuthService authService;
-//
-//    @Autowired
-//    public void setAuthService(AuthService authService){
-//        this.authService = authService;
-//    }
+    @Autowired
+    private AuthService authService;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -36,12 +32,13 @@ public class AuthenticationService implements AuthenticationProvider {
         String password = authentication.getCredentials().toString();
 
         final String baseUri = "http://admin.parki.com.au/api/customer/authenticate";
+
         User user = new User(username, password);
         try {
             URI uri = new URI(baseUri);
-            ResponseEntity<User> result = new RestTemplate().postForEntity(uri, user, User.class);
-            User response = result.getBody();
 
+            ResponseEntity<Customer> result = new RestTemplate().postForEntity(uri, user, Customer.class);
+            System.out.println(result);
             throw new URISyntaxException(username, password);
         }
         catch (URISyntaxException e){
@@ -51,9 +48,10 @@ public class AuthenticationService implements AuthenticationProvider {
         if(user != null){
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
             //here I need to store my customer object to use it while the user is logged in
+
             grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
             return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities);
-        } else
+        }
         throw new AuthenticationServiceException("Invalid Credential");
     }
 
