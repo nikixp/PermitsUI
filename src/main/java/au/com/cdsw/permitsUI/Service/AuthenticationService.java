@@ -3,6 +3,8 @@ package au.com.cdsw.permitsUI.Service;
 import au.com.cdsw.permitsUI.Entity.Customer;
 import au.com.cdsw.permitsUI.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.AuthenticationServiceException;
@@ -28,6 +30,8 @@ public class AuthenticationService implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 
+        RestTemplate restTemplate = new RestTemplate();
+
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
 
@@ -38,8 +42,16 @@ public class AuthenticationService implements AuthenticationProvider {
             URI uri = new URI(baseUri);
 
             ResponseEntity<Customer> result = new RestTemplate().postForEntity(uri, user, Customer.class);
-            System.out.println(result);
-            throw new URISyntaxException(username, password);
+
+//            ResponseEntity<List<Customer>> response = restTemplate.exchange(
+//                    baseUri, HttpMethod.GET,
+//                    null,
+//                    new ParameterizedTypeReference<List<Customer>>(){});
+//
+//            List<Customer> customers = response.getBody();
+//
+//            System.out.println(customers);
+            throw new URISyntaxException("", "");
         }
         catch (URISyntaxException e){
             System.out.println(e);
