@@ -19,6 +19,7 @@
         <link type="text/css" href="${path}/webjars/bootstrap/4.2.1/css/bootstrap.css" rel="stylesheet">
         <!--Link my myStyle.css file-->
         <link type="text/css" rel="stylesheet" href="../../css/myStyle.css">
+        <link type="text/css" rel="stylesheet" href="../../css/confirmation.scss">
 
 </head>
 

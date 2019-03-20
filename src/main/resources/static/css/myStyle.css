@@ -36,9 +36,27 @@ body {
     color: red
 }
 .successful{
-    color: green
+    color: lightgreen;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
     background-color: lightgreen;
 }
+
+.bg {
+    /* The image used */
+    background-image: url("../images/carpark.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
