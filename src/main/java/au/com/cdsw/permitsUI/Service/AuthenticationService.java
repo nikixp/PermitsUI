@@ -54,6 +54,7 @@ public class AuthenticationService implements AuthenticationProvider {
 //        throw new AuthenticationServiceException("Invalid Credential");
 
 
+        /*Please use email:  adamo@cdsw.com.au   password:  test*/
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
         User user = new User(username, password);
