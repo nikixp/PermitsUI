@@ -30,7 +30,7 @@ public class PermitsController {
             System.out.println(e);
         }
 
-        return "index";
+        return "permits";
     }
 
 }
