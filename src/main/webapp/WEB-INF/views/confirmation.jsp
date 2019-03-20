@@ -6,17 +6,15 @@
 
 <div class="container" style="margin-top: 5%">
 
-    <div class="row  justify-content-center">
-        <div class="col-lg-12">
-            <h4 class="text-success">Application submitted successfully !
-                <br /> Please check your email address regularly.
-                <br />Application processing takes up to 10 days.
+    <div class="row justify-content-center">
+        <div class="col-lg-12" style="background-color: antiquewhite">
+            <h4 class="text-success">Application submitted successfully ! <br />Application processing time takes up to 10 days.
             </h4>
         </div>
 
-        <div class="row col-lg-12">
+        <div class="row col-lg-12" style="margin-top: 2.5%">
             <form:form action="${path}/logout" method="post">
-                <button class="btn btn-link" type="submit"><a style="color:black"><strong>Logout</strong></a></button>
+                <button class="btn btn-info" type="submit"><a ><strong>Logout</strong></a></button>
             </form:form>
         </div>
 

@@ -65,7 +65,9 @@ public class AuthenticationService implements AuthenticationProvider {
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
             try {
                 grantedAuthorities.add(new CustomerGrantAuthority(new ObjectMapper().writeValueAsString(customer)));
-                System.out.println(customer.getFamilyName());
+
+                System.out.println(customer);
+
             }catch (JsonProcessingException e){
                 System.out.println(e);
             }
@@ -76,13 +78,12 @@ public class AuthenticationService implements AuthenticationProvider {
 
     }
 
-    public MultiValueMap<String, String> createRequest(String username, String password) {
-        MultiValueMap<String, String> request = new LinkedMultiValueMap<>();
-        request.add("username", username);
-        request.add("password", password);
-        return request;
-    }
-
+//    public MultiValueMap<String, String> createRequest(String username, String password) {
+//        MultiValueMap<String, String> request = new LinkedMultiValueMap<>();
+//        request.add("username", username);
+//        request.add("password", password);
+//        return request;
+//    }
 
     @Override
     public boolean supports(Class<?> authentication) {
