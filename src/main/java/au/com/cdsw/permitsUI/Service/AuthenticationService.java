@@ -1,7 +1,7 @@
 package au.com.cdsw.permitsUI.Service;
 
-import au.com.cdsw.permitsUI.Entity.Customer;
 import au.com.cdsw.permitsUI.Entity.User;
+import au.com.cdsw.permitsUI.Entity.customer.CustomerAuthority;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -57,19 +57,25 @@ public class AuthenticationService implements AuthenticationProvider {
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
         User user = new User(username, password);
-        Customer customer = new RestTemplate().postForObject("http://admin.parki.com.au/api/customer/authenticate", user, Customer.class);
 
+        CustomerAuthority customer = null;
+        try {
+            customer = new RestTemplate().postForObject("http://admin.parki.com.au/api/customer/authenticate",
+                    user, CustomerAuthority.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //Customer customer = new RestTemplate().postForObject("http://admin.parki.com.au/api/customer/authenticate", user, Customer.class);
+
+        try { //for test
+            System.out.println("customer logged in " + new ObjectMapper().writeValueAsString(customer));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }// remove it for production ! :)
 
         if (customer != null) {
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-            try {
-                grantedAuthorities.add(new CustomerGrantAuthority(new ObjectMapper().writeValueAsString(customer)));
-
-                System.out.println(customer);
-
-            }catch (JsonProcessingException e){
-                System.out.println(e);
-            }
+            grantedAuthorities.add(new CustomerGrantAuthority(customer));
             grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
             return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities);
         }
