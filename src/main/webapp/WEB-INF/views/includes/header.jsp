@@ -43,12 +43,11 @@
                         <%--</li>--%>
                     </ul>
                     <form:form action="${path}/logout" method="post">
-                        <button class="btn btn-link" type="submit"><a style="color:lightgreen">Logout</a></button>
+                        <button class="btn btn-link" type="submit"><a style="text-decoration:none; color:lightgreen">Logout</a></button>
                     </form:form>
                 </div>
             </nav>
         </div>
-
 
 
     </div><!--end container fluid-->
