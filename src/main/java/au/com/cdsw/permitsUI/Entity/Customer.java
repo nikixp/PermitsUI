@@ -72,8 +72,6 @@ public class Customer {
         this.userId = userId;
     }
 
-
-
     @Override
     public String toString() {
         return "Customer{" +
