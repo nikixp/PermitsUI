@@ -74,7 +74,6 @@ public class AuthenticationService implements AuthenticationProvider {
         }
         throw new AuthenticationServiceException("Invalid credentials.");
 
-
     }
 
     public MultiValueMap<String, String> createRequest(String username, String password) {
